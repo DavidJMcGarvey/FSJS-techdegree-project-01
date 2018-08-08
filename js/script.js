@@ -34,15 +34,15 @@ let quotes = [
 // Create the getRandomQuuote function and name it getRandomQuote
 function getRandomQuote() {
  // Code to get quote FROM array
-    let randomQuote = Math.random(quotes);
+  let randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+  return randomQuote;
 }
-
+console.log(getRandomQuote(quotes));
 // Create the printQuote funtion and name it printQuote
 function printQuote() {
  // Code to print the quote
- document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+  document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 }
-printQuote()
 
 // This event listener will respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
