@@ -36,17 +36,23 @@ function getRandomQuote() {
 }
 
 
-// Create the printQuote funtion and name it printQuote
+// Create the printQuote funtion and name it
 function printQuote() {
   let quoteBox = getRandomQuote(quotes);
-  let quoteString = '<p class="quote">' + quoteBox.quote + '</p>';
-  quoteString += '<p class="source"> ' + quoteBox.source;
+  let quoteString = '<p class="quote">' + quoteBox.quote + '</p>'
+  quoteString += '<p class="source">' + quoteBox.source;
     if (quoteBox.year) {
-      quoteString += '<span class="year"> ' + quoteBox.year + ' </span></p>';
-    } else {
-      '</p>';
+      stringQuote += '<span class="year">' + quoteBox.year + '</span>';
     }
-    document.getElementById('quote-box').innerHTML = quoteString;
+    if (quoteBox.citation) {
+      stringQuote += '<span class="citation"> ' + quoteBox.citation + '</span>';
+    }
+    if (quoteBox.tag) {
+      stringQuote += '<span class="citation"> ' + quoteBox.tag + '</span>';
+    } else {
+        '</p>';
+    }
+document.getElementById('quote-box').innerHTML = quoteString;
 }
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
