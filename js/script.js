@@ -62,3 +62,5 @@ document.getElementById('loadQuote').addEventListener("click", printQuote, false
 
 // setting timer that refreshes quote after 30 seconds
 setInterval(printQuote, 30000);
+
+// Hey there, thanks for taking the time to review my coding project!
