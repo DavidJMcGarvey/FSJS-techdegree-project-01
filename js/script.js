@@ -3,31 +3,38 @@ let quotes = [
   {
     quote: "Anything is possible!",
     source: "Kevin Garnet",
-    year: 2008
+    year: 2008,
+    citation: '',
+    tag: 'Sports'
   },
   {
     quote: "I called game.",
     source: "Paul Pierce",
-    year: 2015
+    year: 2015,
+    citation: '',
+    tag: 'Sports'
   },
   {
     quote: "Success is peace of mind which is a direct result of self-satisfaction in knowing you did your best to become the best you are capable of becoming.",
-    source: "John Wooden"
+    source: "John Wooden",
+    tag: "Motivation"
   },
   {
     quote: "Silence is a source of great strength",
-    source: "Lao Tzu"
+    source: "Lao Tzu",
+    tag: "Reflective"
   },
   {
     quote: "For every minute you remain angry, you give up sixty seconds of peace of mind",
-    source: "Ralph Waldo Emerson"
+    source: "Ralph Waldo Emerson",
+    tag: "Meditative"
   },
   {
     quote: "The mediocre teacher tells. The good teacher explains. The superior teacher demonstrates. The great teacher inspires.",
-    source: "William Arthur Ward"
+    source: "William Arthur Ward",
+    tag: "Education"
   }
 ];
-
 
 // Function that randomly selects quotes from array above
 function getRandomQuote() {
@@ -39,23 +46,17 @@ function getRandomQuote() {
 // Create the printQuote funtion and name it
 function printQuote() {
   let quoteBox = getRandomQuote(quotes);
-  let quoteString = '<p class="quote">' + quoteBox.quote + '</p>'
+  let quoteString = '<p class="quote">' + quoteBox.quote + '</p>';
   quoteString += '<p class="source">' + quoteBox.source;
+    //adding
     if (quoteBox.year) {
-      stringQuote += '<span class="year">' + quoteBox.year + '</span>';
-    }
-    if (quoteBox.citation) {
-      stringQuote += '<span class="citation"> ' + quoteBox.citation + '</span>';
+      quoteString += '<span class="year">' + quoteBox.year + '</span>';
     }
     if (quoteBox.tag) {
-      stringQuote += '<span class="citation"> ' + quoteBox.tag + '</span>';
+      quoteString += '<span class="tag"> ' + quoteBox.tag + '</span>';
     } else {
         '</p>';
     }
-document.getElementById('quote-box').innerHTML = quoteString;
+      document.getElementById('quote-box').innerHTML = quoteString;
 }
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
-
-// This event listener will respond to "Show another quote" button clicks
-// when user clicks anywhere on the button, the "printQuote" function is called
-// document.getElementById('loadQuote').addEventListener("click", printQuote, false);
