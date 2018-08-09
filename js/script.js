@@ -4,14 +4,12 @@ let quotes = [
     quote: "Anything is possible!",
     source: "Kevin Garnet",
     year: 2008,
-    citation: '',
     tag: 'Sports'
   },
   {
     quote: "I called game.",
     source: "Paul Pierce",
     year: 2015,
-    citation: '',
     tag: 'Sports'
   },
   {
@@ -43,15 +41,16 @@ function getRandomQuote() {
 }
 
 
-// Create the printQuote funtion and name it
+// function that prints the random quote
 function printQuote() {
   let quoteBox = getRandomQuote(quotes);
   let quoteString = '<p class="quote">' + quoteBox.quote + '</p>';
-  quoteString += '<p class="source">' + quoteBox.source;
-    //adding
+  quoteString += '<p class="source">' + quoteBox.source + ', ';
+    //adds year if applicable
     if (quoteBox.year) {
-      quoteString += '<span class="year">' + quoteBox.year + '</span>';
+      quoteString += '<span class="year">' + quoteBox.year + ', </span>';
     }
+    //adds tag if applicable
     if (quoteBox.tag) {
       quoteString += '<span class="tag"> ' + quoteBox.tag + '</span>';
     } else {
@@ -60,3 +59,6 @@ function printQuote() {
       document.getElementById('quote-box').innerHTML = quoteString;
 }
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+
+// setting timer that refreshes quote after 30 seconds
+setInterval(printQuote, 30000);
