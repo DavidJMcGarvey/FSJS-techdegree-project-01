@@ -71,7 +71,6 @@ function printQuote() {
       document.getElementById('quote-box').innerHTML = quoteString;
 }
 
-
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
 // Setting timer that refreshes quote after 30 seconds
