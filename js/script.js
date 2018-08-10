@@ -34,33 +34,47 @@ let quotes = [
   }
 ];
 
+// Function that selects random color
+function randomRGB() {
+  return Math.floor(Math.random() * 256);
+}
+
+// Declaring color variables
+var red = randomRGB();
+var green = randomRGB();
+var blue = randomRGB();
+var rgbColor = 'rgb(' + red + ',' + green + ',' + blue + ')';
+
 // Function that randomly selects quotes from array above
 function getRandomQuote() {
   let randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
   return randomQuote;
 }
 
-
-// function that prints the random quote
+// Function that prints the random quote
 function printQuote() {
   let quoteBox = getRandomQuote(quotes);
   let quoteString = '<p class="quote">' + quoteBox.quote + '</p>';
   quoteString += '<p class="source">' + quoteBox.source + ', ';
-    //adds year if applicable
+    // Adds year if applicable
     if (quoteBox.year) {
       quoteString += '<span class="year">' + quoteBox.year + ', </span>';
     }
-    //adds tag if applicable
+    // Adds tag if applicable
     if (quoteBox.tag) {
       quoteString += '<span class="tag"> ' + quoteBox.tag + '</span>';
     } else {
         '</p>';
     }
+      // Random background color upon call
+      document.body.style.backgroundColor = rgbColor;
       document.getElementById('quote-box').innerHTML = quoteString;
 }
+
+
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
-// setting timer that refreshes quote after 30 seconds
+// Setting timer that refreshes quote after 30 seconds
 setInterval(printQuote, 30000);
 
 // Hey there, thanks for taking the time to review my coding project!
