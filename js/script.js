@@ -39,11 +39,14 @@ function randomRGB() {
   return Math.floor(Math.random() * 256);
 }
 
-// Declaring color variables
-var red = randomRGB();
-var green = randomRGB();
-var blue = randomRGB();
-var rgbColor = 'rgb(' + red + ',' + green + ',' + blue + ')';
+// Function that changes background color upon call
+function backgroundColor () {
+  let red = randomRGB();
+  let green = randomRGB();
+  let blue = randomRGB();
+  let rgbColor = 'rgb(' + red + ',' + green + ',' + blue + ')';
+  document.body.style.backgroundColor = rgbColor;
+}
 
 // Function that randomly selects quotes from array above
 function getRandomQuote() {
@@ -67,8 +70,8 @@ function printQuote() {
         '</p>';
     }
       // Random background color upon call
-      document.body.style.backgroundColor = rgbColor;
       document.getElementById('quote-box').innerHTML = quoteString;
+      backgroundColor();
 }
 
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
