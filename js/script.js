@@ -34,12 +34,12 @@ let quotes = [
   }
 ];
 
-// Function that selects random color
+// Function that randomizes number for use in random color selection
 function randomRGB() {
   return Math.floor(Math.random() * 256);
 }
 
-// Function that changes background color upon call
+// Function that changes background color using 
 function backgroundColor () {
   let red = randomRGB();
   let green = randomRGB();
