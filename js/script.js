@@ -31,7 +31,13 @@ let quotes = [
     quote: "The mediocre teacher tells. The good teacher explains. The superior teacher demonstrates. The great teacher inspires.",
     source: "William Arthur Ward",
     tag: "Education"
-  }
+  },
+  {
+    quote: "Ho! Tom Bombadil!",
+    source: "Frodo Baggins",
+    citation: "The Fellowship of the Ring",
+    tag: "Fantasy"
+  },
 ];
 
 // Function that randomizes number for use in random color selection
@@ -39,7 +45,7 @@ function randomRGB() {
   return Math.floor(Math.random() * 256);
 }
 
-// Function that changes background color using 
+// Function that changes background color using
 function backgroundColor () {
   let red = randomRGB();
   let green = randomRGB();
@@ -62,6 +68,9 @@ function printQuote() {
     // Adds year if applicable
     if (quoteBox.year) {
       quoteString += '<span class="year">' + quoteBox.year + ', </span>';
+    }
+    if (quoteBox.citation) {
+      quoteString += '<span class="citation">' + quoteBox.citation + ', </span>';
     }
     // Adds tag if applicable
     if (quoteBox.tag) {
