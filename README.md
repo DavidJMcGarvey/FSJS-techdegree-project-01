@@ -1,7 +1,13 @@
-Full Stack JavaScript Techdegree Project 1
 -------------------------------
 ##    Random Quote Generator   ##
 -------------------------------
+
+*Application Description and Goals:* 
+[Screenshot 1](https://user-images.githubusercontent.com/42125523/72554576-d37d5680-384f-11ea-9571-3190e9c89e4b.png)
+
+*Technologies:*
+
+*Screenshots:*
 
 Welcome to the Random Quote Generator!
 
