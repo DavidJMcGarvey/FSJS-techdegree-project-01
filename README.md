@@ -1,5 +1,5 @@
 -----------------------------
-## Random Quote Generator ##
+# Random Quote Generator #
 -----------------------------
 
 Welcome to the Random Quote Generator!
